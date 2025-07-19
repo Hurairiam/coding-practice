@@ -1,4 +1,4 @@
-/* Pattern 4: Inverted Right-Angled Triangle (Right-Aligned)
+/* Pattern 5: Inverted Right-Angled Triangle (Right-Aligned)
 
 *****
  ****

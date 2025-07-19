@@ -1,4 +1,4 @@
-/* Pattern 4: Full Pyramid
+/* Pattern 6: Full Pyramid
 
         *
       * * *
