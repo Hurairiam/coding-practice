@@ -15,8 +15,8 @@ int main()
     }
 
     if(sum==n)
-    {printf("%d: Perfect Number\n", n);}
-else{printf("%d: Not Perfect Number\n", n);}
+    {printf("%d is a Perfect Number\n", n);}
+else{printf("%d is Not a Perfect Number\n", n);}
 
     return 0;
 }
