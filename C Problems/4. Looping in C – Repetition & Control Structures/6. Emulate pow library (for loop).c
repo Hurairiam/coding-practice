@@ -1,4 +1,4 @@
-//Write a program to emulate the pow library function where the parameters will be user input using a while loop.
+//Write a program to emulate the pow library function where the parameters will be user input using a for loop.
 
 #include <stdio.h>
 
