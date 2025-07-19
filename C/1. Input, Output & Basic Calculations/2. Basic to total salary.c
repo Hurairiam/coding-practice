@@ -1,5 +1,5 @@
 /*
-2. Write a C program to calculate and display the total salary of an employee considering that
+Write a C program to calculate and display the total salary of an employee considering that
 total salary is the sum of basic salary and house rent. The program must ask the user for the basic
 salary and percentage of basic salary which determines the house rent.
 Input : 25000 10

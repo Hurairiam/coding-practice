@@ -1,5 +1,5 @@
 /*
-5. Find out average of four numbers
+Find out average of four numbers
 Input: 5 8 4 6
 Output: Average = 5.75
 */

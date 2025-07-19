@@ -1,5 +1,5 @@
 /*
-6. Convert Celsius temperature to Fahrenheit.
+Convert Celsius temperature to Fahrenheit.
 T (°F) = T (°C) × 9/5 + 32
 Input: 20
 Output: Celsius = 68

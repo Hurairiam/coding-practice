@@ -1,5 +1,5 @@
 /*
-3. Write a C program that takes number of days as input, and then converts it into years and days,
+Write a C program that takes number of days as input, and then converts it into years and days,
 and displays the results. Assume that, 1 year = 365 days.
 Input : 735
 Output : 2 years 5days

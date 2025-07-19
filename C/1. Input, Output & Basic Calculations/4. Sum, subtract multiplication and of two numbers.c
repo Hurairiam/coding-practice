@@ -1,5 +1,5 @@
 /*
-4. Take two inputs from user and find out sum, subtract multiplication and
+Take two inputs from user and find out sum, subtract multiplication and
 division.
 Input: 8 2
 Output: Sum=10, Subtract=6, Multiplication= 16, Division = 4
