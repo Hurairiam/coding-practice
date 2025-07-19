@@ -11,22 +11,24 @@ Output: 0.80
 
 #include <stdio.h>
 
-int main() {
+int main()
+{
     float a, b;
     char op;
+    printf("Enter first number, a operator and 2nd number respectively :  ");
     scanf("%f %c %f", &a, &op, &b);
 
-    if(op == '+')
-        printf("%.2f\n", a + b);
-    else if(op == '-')
-        printf("%.2f\n", a - b);
-    else if(op == '*')
-        printf("%.2f\n", a * b);
-    else if(op == '/') {
-        if(b == 0)
-            printf("Division by zero not possible\n");
-        else
-            printf("%.2f\n", a / b);
+     if(op=='+')
+        {printf("%.2f\n", a+b);}
+else if(op=='-')
+        {printf("%.2f\n", a-b);}
+else if(op=='*')
+        {printf("%.2f\n", a*b);}
+else if(op == '/') {
+
+    if(b == 0)
+        {printf("Division by zero not possible\n");}
+    else{printf("%.2f\n", a/b);}
     }
 
     return 0;
