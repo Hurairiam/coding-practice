@@ -2,7 +2,8 @@
 
 #include <stdio.h>
 
-int main() {
+int main() 
+{
     int base, expo, result=1;
 
     printf("Enter base and exponent: ");
