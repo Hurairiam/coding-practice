@@ -19,20 +19,21 @@ int main()
         if(visited[i])
             continue;
 
-        int currCount=1;
+        int dupliCount=1;
 
         for(j=i+1; j<n; j++)
         {
             if(num[i]==num[j])
             {
-                currCount++;
+                dupliCount++;
                 visited[j]=1;
             }
         }
 
-        if(currCount>1)
+        if(dupliCount>1)
             dupliCount++;
     }
+
     printf("Total number of duplicate elements found in the array is : %d\n", dupliCount);
 
     return 0;
