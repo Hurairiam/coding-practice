@@ -1,41 +1,37 @@
-//Write a program in C to count the total number of duplicate elements in an array
-
-#include<stdio.h>
+#include <stdio.h>
+#include <string.h>
 
 int main()
 {
-    int i, j, n, num[100], dupliCount=0;
-    int visited[100]={0};
-    printf("Input the number of elements to be stored in the array : ");
+    int a[100], visited[100];
+
+    memset(visited, 0, 100*sizeof(visited[0]));
+
+    int n;
     scanf("%d", &n);
-    printf("\nInput %d elements in the array :\n", n);
-
-    for(i=0; i<n; i++)
-    {
-        printf("element - %d : ", i);
-        scanf("%d", &num[i]);
+    for(int i=0; i<n; i++){
+        scanf("%d", &a[i]);
     }
-
-    for(i=0; i<n; i++)
-    {
-        if(visited[i])
-            continue;
-
-        int currCount=1;
-
-        for(j=i+1; j<n; j++)
-        {
-            if(num[i]==num[j])
-            {
-                currCount++;
-                visited[j]=1;
+    int count = 0;
+    for(int i=0; i<n; i++){
+        if(visited[a[i]]==0){
+            for(int j=i+1; j<n; j++){
+                if(a[i]==a[j]){
+                    count++;
+                    visited[a[i]]++;
+                    break;
+                }
             }
         }
-
-        if(currCount>1)
-            dupliCount++;
     }
-    printf("Total number of duplicate elements found in the array is : %d\n", dupliCount);
 
-    return 0;
+    printf("Number of duplicate elements = %d\n", count);
+
+    for(int i=0; i<=99; i++){
+        if(visited[i]>0){
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+
 }
