@@ -1,11 +1,11 @@
 /*
-Write a C program to multiply two 3Ã—3 matrices.
+Write a C program to multiply two 3×3 matrices.
 
-Read elements of matrix A (3Ã—3).
+Read elements of matrix A (3×3).
 
-Read elements of matrix B (3Ã—3).
+Read elements of matrix B (3×3).
 
-Compute and print the product matrix C = A Ã— B.
+Compute and print the product matrix C = A × B.
 
 */
 

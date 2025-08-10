@@ -1,4 +1,5 @@
-/*Write a program in C that reads a 5 Ã— 5 array of integers from the user. After reading the values:
+/*
+Write a program in C that reads a 5 × 5 array of integers from the user. After reading the values:
 
 Display the sum of each row.
 
@@ -8,7 +9,8 @@ Program Input/Output Specification:
 
 First, the program will prompt for each row separately.
 
-After all rows are entered, the program will print the row totals and then the column totals.*/
+After all rows are entered, the program will print the row totals and then the column totals.
+*/
 
 #include <stdio.h>
 
