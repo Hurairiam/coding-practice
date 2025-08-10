@@ -16,7 +16,7 @@ int main()
     float overall;
     car hold[3];
     printf("Enter information : \n");
-    printf("How many days are going to rent for : ");
+    printf("How many days are you going to rent for : ");
     scanf("%d",&days);
 
     for(int i=0; i<3; i++)
