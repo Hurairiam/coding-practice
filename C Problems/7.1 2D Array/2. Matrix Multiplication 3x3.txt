@@ -1,0 +1,60 @@
+/*
+Write a C program to multiply two 3×3 matrices.
+
+Read elements of matrix A (3×3).
+
+Read elements of matrix B (3×3).
+
+Compute and print the product matrix C = A × B.
+
+*/
+
+#include <stdio.h>
+
+int main() {
+    int A[3][3], B[3][3], C[3][3];
+    int i, j, k;
+
+    // Input matrix A
+    printf("Enter the elements of matrix A (3x3):\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    // Input matrix B
+    printf("Enter the elements of matrix B (3x3):\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            scanf("%d", &B[i][j]);
+        }
+    }
+
+    // Initialize matrix C to zero
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            C[i][j] = 0;
+        }
+    }
+
+    // Multiply A and B to get C
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            for (k = 0; k < 3; k++) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+
+    // Print the resultant matrix C
+    printf("Resultant matrix:\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%d ", C[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
