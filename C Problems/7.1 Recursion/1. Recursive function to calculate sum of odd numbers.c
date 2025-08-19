@@ -1,4 +1,4 @@
-Write a program to find the sum of a series of positive odd numbers using recursion.
+//Write a program to find the sum of a series of positive odd numbers using recursion.
 
 #include <stdio.h>
 
