@@ -1,43 +1,41 @@
-/*Create a structure called "Car" that will hold information such as the car ID, model name, and daily
-rental rate. Develop a C program that allows for the input of information for three cars, computes the
-overall rental cost for a given duration in days, and presents the findings.*/
+#include <stdio.h>
 
-#include<stdio.h>
-
-typedef struct car
+int main() 
 {
-    int carID;
-    char modelName[50];
-    float dailyRate;
-}car;
+    int c, first, last, middle, n, search, array[100];
 
-int main()
-{   int i, days;
-    float overall;
-    car hold[3];
-    printf("Enter information : \n");
-    printf("How many days are you going to rent for : ");
-    scanf("%d",&days);
+    printf("Enter number of elements\n");
+    scanf("%d", &n);
 
-    for(int i=0; i<3; i++)
+    printf("Enter %d integers (in ascending order)\n", n);
+    for (c = 0; c < n; c++)
+        scanf("%d", &array[c]);
+
+    printf("Enter value to find\n");
+    scanf("%d", &search);
+
+    first = 0;
+    last = n - 1;
+    middle = (first + last) / 2;
+
+    while (first <= last) 
     {
-        printf("Details for car no %d:\n", i+1);
-        printf("Car ID: ");
-        scanf("%d",&hold[i].carID);
-        printf("Model Name: ");
-        scanf("%s", hold[i].modelName);
-        printf("Daily Rental Rate : ");
-        scanf("%f",&hold[i].dailyRate);
+        if (array[middle] < search)
+            first = middle + 1;
+        else if (array[middle] == search) 
+        {
+        
+      printf("%d found at location %d.\n", search, middle + 1);
+            break;
+        } 
+        else
+            last = middle - 1;
+
+        middle = (first + last) / 2;
     }
-        for(int i=0; i<3; i++)
-    {
-        overall=hold[i].dailyRate*days;
 
-        printf("Car ID: %d ", hold[i].carID);
+    if (first > last)
+        printf("Not found! %d isn't present in the list.\n", search);
 
-        printf("Model Name: %s ", hold[i].modelName);
-
-        printf("Overall Rental Cost for %d days: %.2f\n", days, overall);
-    }
     return 0;
 }
