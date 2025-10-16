@@ -1,41 +1,65 @@
-#include <stdio.h>
 
-int main() 
+#include<stdio.h>
+
+int main()
 {
-    int c, first, last, middle, n, search, array[100];
 
-    printf("Enter number of elements\n");
-    scanf("%d", &n);
+int arr[100], n, i, j, search, pos, t, low, high, mid;
 
-    printf("Enter %d integers (in ascending order)\n", n);
-    for (c = 0; c < n; c++)
-        scanf("%d", &array[c]);
+printf("Enter the number of elements in the array : ");
+scanf("%d", &n);
+for(i=0; i<n; i++)
+{
+    printf("\nEnter the element number %d : ", i+1);
+    scanf("%d",&arr[i]);
+}
+//selection sort
 
-    printf("Enter value to find\n");
-    scanf("%d", &search);
+for(i=0; i<n-1; i++)
+{
+    pos=i;
 
-    first = 0;
-    last = n - 1;
-    middle = (first + last) / 2;
-
-    while (first <= last) 
+    for(j=i+1; j<n; j++)
     {
-        if (array[middle] < search)
-            first = middle + 1;
-        else if (array[middle] == search) 
-        {
-        
-      printf("%d found at location %d.\n", search, middle + 1);
-            break;
-        } 
-        else
-            last = middle - 1;
-
-        middle = (first + last) / 2;
+        if(arr[j]<arr[pos])
+            pos=j;
     }
+    if(pos!=i)
+    {
+        t=arr[i];
+        arr[i]=arr[pos];
+        arr[pos]=t;
+    }
+}
 
-    if (first > last)
-        printf("Not found! %d isn't present in the list.\n", search);
+//binary sort
 
-    return 0;
+printf("\nEnter the element to search : \n");
+scanf("%d", &search);
+
+low=0;
+high=n-1;
+mid=(low+high)/2;
+while(low<=high)
+{
+    if(arr[mid]==search)
+    {
+        printf("\nThe Element %d is found at the index %d\n", search, mid+1);
+        break;
+    }
+    else if(arr[mid]<search)
+        low=mid+1;
+    else
+        high=mid-1;
+
+        mid=(low+high)/2;
+}
+if(low>high)
+    printf("Not found! %d is not present in the array", search);
+
+    /*printf("\nThe sorted array elements are:\n\n");
+    for(i=0;i<n;i++)
+        printf("%d  ", arr[i]);*/
+
+return 0;
 }
