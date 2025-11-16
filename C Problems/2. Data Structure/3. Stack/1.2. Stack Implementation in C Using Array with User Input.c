@@ -1,8 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 
 int *stack;
-int top = -1;
+int top=-1;
 int MAX;
 
 void push()
