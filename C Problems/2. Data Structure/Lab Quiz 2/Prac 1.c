@@ -22,7 +22,7 @@ int pop()
 {
     if(top==-1)
     {
-        printf("Stack Underflow!");
+        printf("Stack Underflow!\n");
         return -1;
     }
     else
@@ -38,10 +38,10 @@ void display()
 {
     if(top==-1)
     {
-        printf("Stack is empty!");
+        printf("Stack is empty!\n");
     }
     else
-    {   printf("Stack Elements : ");
+    {   printf("Stack Elements : \n");
         for(int i=top; i>=0; i--)
         {
         {
@@ -55,12 +55,12 @@ void display()
 
 int main()
 {
-    push(10);
-    push(11);
-    push(17);
-    push(18);
-    display();
+    push(1);
+    push(2);
+    push(3);
+    push(4);
     pop();
+    push(5);
     display();
 
     return 0;

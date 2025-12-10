@@ -10,21 +10,22 @@ int size;
 void enqueue()
 {
     int val;
+    printf("Enter value to enqueue: ");
+    scanf("%d", &val);
 
-    if (rear == size - 1)
+    if (rear == size - 1)  // Overflow
     {
         printf("Queue Overflow!\n");
     }
-    else
+    else if (front == -1 && rear == -1) // first element
     {
-        printf("Enter value to enqueue: ");
-        scanf("%d", &val);
-
-        if (front == -1 && rear == -1) // first element
-            front = rear = 0;
-        else
-            rear++;
-
+        front = rear = 0;
+        queue[rear] = val;
+        printf("%d enqueued to queue.\n", val);
+    }
+    else  // more than one element
+    {
+        rear++;
         queue[rear] = val;
         printf("%d enqueued to queue.\n", val);
     }
@@ -40,14 +41,18 @@ int dequeue()
         printf("Queue Underflow!\n");
         return -1;
     }
-    else
+    else if (front == rear) // only one element
     {
         val = queue[front];
-        if (front == rear) // only one element
-            front = rear = -1;
-        else
-            front++;
-
+        front = rear = -1;
+        printf("%d dequeued from queue.\n", val);
+        return val;
+    }
+    else // more than one element
+    {
+        val = queue[front];
+        front++;
+        printf("%d dequeued from queue.\n", val);
         return val;
     }
 }
