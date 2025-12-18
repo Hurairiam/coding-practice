@@ -14,52 +14,49 @@ struct node* createNode(int val) {
     return n;
 }
 
-/* Stack for DFS */
 #define MAX 100
-struct node* stack[MAX];
-int top = -1;
+struct node* queue[MAX];
+int front = 0, rear = 0;
 
-void push(struct node* n) {
-    if (top == MAX - 1) {
-        printf("Stack Overflow!\n");
+void enqueue(struct node* n) {
+    if (rear == MAX) {
+        printf("Queue Overflow!\n");
         return;
     }
-    stack[++top] = n;
+    queue[rear++] = n;
 }
 
-struct node* pop() {
-    if (top == -1) {
-        printf("Stack Underflow!\n");
+struct node* dequeue() {
+    if (front == rear) {
+        printf("Queue Underflow!\n");
         return NULL;
     }
-    return stack[top--];
+    return queue[front++];
 }
 
-int isEmptyStack() {
-    return top == -1;
+int isEmpty() {
+    return front == rear;
 }
 
-/* DFS Iterative */
-void DFS(struct node* root) {
+void BFS(struct node* root) {
     if (root == NULL) return;
 
-    top = -1;
-    push(root);
+    front = rear = 0;
+    enqueue(root);
 
-    printf("DFS (Preorder Iterative): ");
-    while (!isEmptyStack()) {
-        struct node* current = pop();
+    printf("BFS (Level Order): ");
+    while (!isEmpty()) {
+        struct node* current = dequeue();
         printf("%d ", current->data);
 
-        if (current->right != NULL)
-            push(current->right);
         if (current->left != NULL)
-            push(current->left);
+            enqueue(current->left);
+        if (current->right != NULL)
+            enqueue(current->right);
     }
     printf("\n");
 }
 
-/* Main */
 int main() {
     struct node* root = createNode(10);
     root->left = createNode(5);
@@ -69,8 +66,7 @@ int main() {
     root->right->left = createNode(12);
     root->right->right = createNode(20);
 
-    DFS(root);
+    BFS(root);
 
     return 0;
 }
-
